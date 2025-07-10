@@ -1,0 +1,331 @@
+2025-03-29 16:51:09,543 - INFO - Start polling
+2025-03-29 16:51:10,087 - INFO - Run polling for bot @botnetiktochkabot id=7880059689 - '213'
+2025-03-29 16:51:32,973 - INFO - Update id=131548394 is handled. Duration 531 ms by bot id=7880059689
+2025-03-29 16:51:35,873 - INFO - Update id=131548395 is handled. Duration 648 ms by bot id=7880059689
+2025-03-29 16:51:39,569 - INFO - Update id=131548396 is handled. Duration 514 ms by bot id=7880059689
+2025-03-29 16:51:43,820 - INFO - Update id=131548397 is handled. Duration 1766 ms by bot id=7880059689
+2025-03-29 16:51:46,027 - INFO - Update id=131548398 is handled. Duration 506 ms by bot id=7880059689
+2025-03-29 16:51:47,233 - INFO - Update id=131548399 is handled. Duration 171 ms by bot id=7880059689
+2025-03-29 16:51:51,929 - INFO - Update id=131548400 is handled. Duration 487 ms by bot id=7880059689
+2025-03-29 16:51:54,465 - INFO - Update id=131548401 is handled. Duration 204 ms by bot id=7880059689
+2025-03-29 16:51:57,460 - INFO - Update id=131548402 is handled. Duration 494 ms by bot id=7880059689
+2025-03-29 16:52:24,479 - INFO - Update id=131548403 is handled. Duration 598 ms by bot id=7880059689
+2025-03-29 16:52:27,252 - INFO - Update id=131548404 is handled. Duration 180 ms by bot id=7880059689
+2025-03-29 16:52:34,001 - INFO - Update id=131548405 is not handled. Duration 344 ms by bot id=7880059689
+2025-03-29 16:52:34,001 - ERROR - Cause exception while process update id=131548405 by bot id=7880059689
+TelegramBadRequest: Telegram server says - Bad Request: can't parse entities: Unsupported start tag "user_id" at byte offset 74
+Traceback (most recent call last):
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\Desktop\JakeFirm\main.py", line 715, in process_callback
+    await bot.send_message(callback.message.chat.id,
+    ...<4 lines>...
+        ]))
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\bot.py", line 2972, in send_message
+    return await self(call, request_timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\bot.py", line 498, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\session\aiohttp.py", line 185, in make_request
+    response = self.check_response(
+        bot=bot, method=method, status_code=resp.status, content=raw_result
+    )
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\session\base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: can't parse entities: Unsupported start tag "user_id" at byte offset 74
+2025-03-29 16:52:39,059 - INFO - Update id=131548406 is handled. Duration 173 ms by bot id=7880059689
+2025-03-29 16:52:40,419 - INFO - Update id=131548407 is not handled. Duration 338 ms by bot id=7880059689
+2025-03-29 16:52:40,419 - ERROR - Cause exception while process update id=131548407 by bot id=7880059689
+TelegramBadRequest: Telegram server says - Bad Request: can't parse entities: Unsupported start tag "user_id" at byte offset 74
+Traceback (most recent call last):
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\Desktop\JakeFirm\main.py", line 715, in process_callback
+    await bot.send_message(callback.message.chat.id,
+    ...<4 lines>...
+        ]))
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\bot.py", line 2972, in send_message
+    return await self(call, request_timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\bot.py", line 498, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\session\aiohttp.py", line 185, in make_request
+    response = self.check_response(
+        bot=bot, method=method, status_code=resp.status, content=raw_result
+    )
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\session\base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: can't parse entities: Unsupported start tag "user_id" at byte offset 74
+2025-03-29 16:52:52,414 - INFO - Update id=131548408 is not handled. Duration 167 ms by bot id=7880059689
+2025-03-29 16:52:52,414 - ERROR - Cause exception while process update id=131548408 by bot id=7880059689
+TelegramBadRequest: Telegram server says - Bad Request: can't parse entities: Unsupported start tag "user_id" at byte offset 109
+Traceback (most recent call last):
+  File "C:\Users\пшака\Desktop\JakeFirm\main.py", line 1203, in give_subscription
+    raise ValueError("Неверный формат команды")
+ValueError: Неверный формат команды
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 309, in _process_update
+    response = await self.feed_update(bot, update, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 158, in feed_update
+    response = await self.update.wrap_outer_middleware(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<7 lines>...
+    )
+    ^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\error.py", line 25, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\middlewares\user_context.py", line 56, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\fsm\middleware.py", line 42, in __call__
+    return await handler(event, data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\dispatcher.py", line 276, in _listen_update
+    return await self.propagate_event(update_type=update_type, event=event, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 146, in propagate_event
+    return await observer.wrap_outer_middleware(_wrapped, event=event, data=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 141, in _wrapped
+    return await self._propagate_event(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        observer=observer, update_type=update_type, event=telegram_event, **data
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\router.py", line 166, in _propagate_event
+    response = await observer.trigger(event, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\telegram.py", line 121, in trigger
+    return await wrapped_inner(event, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\dispatcher\event\handler.py", line 43, in call
+    return await wrapped()
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\Desktop\JakeFirm\main.py", line 1227, in give_subscription
+    await message.answer(f"\u274c <b>Ошибка:</b> {str(e)}. Использование: /give_sub <user_id> <days>", parse_mode=ParseMode.HTML)
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\methods\base.py", line 84, in emit
+    return await bot(self)
+           ^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\bot.py", line 498, in __call__
+    return await self.session(self, method, timeout=request_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\session\base.py", line 254, in __call__
+    return cast(TelegramType, await middleware(bot, method))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\session\aiohttp.py", line 185, in make_request
+    response = self.check_response(
+        bot=bot, method=method, status_code=resp.status, content=raw_result
+    )
+  File "C:\Users\пшака\AppData\Local\Programs\Python\Python313\Lib\site-packages\aiogram\client\session\base.py", line 120, in check_response
+    raise TelegramBadRequest(method=method, message=description)
+aiogram.exceptions.TelegramBadRequest: Telegram server says - Bad Request: can't parse entities: Unsupported start tag "user_id" at byte offset 109
+2025-03-29 16:52:55,405 - INFO - Update id=131548409 is not handled. Duration 2 ms by bot id=7880059689
+2025-03-29 16:53:42,086 - INFO - Start polling
+2025-03-29 16:53:42,564 - INFO - Run polling for bot @botnetiktochkabot id=7880059689 - '213'
+2025-03-29 16:53:43,253 - INFO - Update id=131548410 is handled. Duration 519 ms by bot id=7880059689
+2025-03-29 16:53:44,860 - INFO - Update id=131548411 is handled. Duration 522 ms by bot id=7880059689
+2025-03-29 16:54:10,398 - INFO - Start polling
+2025-03-29 16:54:10,893 - INFO - Run polling for bot @botnetiktochkabot id=7880059689 - '213'
+2025-03-29 16:54:11,601 - INFO - Update id=131548412 is handled. Duration 523 ms by bot id=7880059689
+2025-03-29 16:54:12,201 - INFO - Update id=131548413 is handled. Duration 828 ms by bot id=7880059689
+2025-03-29 16:54:13,630 - INFO - Update id=131548414 is handled. Duration 690 ms by bot id=7880059689
+2025-03-29 16:54:16,268 - INFO - Update id=131548415 is handled. Duration 169 ms by bot id=7880059689
+2025-03-29 16:54:18,641 - INFO - Update id=131548416 is handled. Duration 529 ms by bot id=7880059689
+2025-03-29 16:54:22,333 - INFO - Update id=131548417 is handled. Duration 1616 ms by bot id=7880059689
+2025-03-29 16:54:22,770 - INFO - Update id=131548418 is handled. Duration 529 ms by bot id=7880059689
+2025-03-29 16:54:24,982 - INFO - Update id=131548419 is handled. Duration 185 ms by bot id=7880059689
+2025-03-29 16:54:25,905 - INFO - Update id=131548420 is handled. Duration 165 ms by bot id=7880059689
+2025-03-29 16:54:26,317 - INFO - Update id=131548421 is handled. Duration 170 ms by bot id=7880059689
+2025-03-29 16:54:27,534 - INFO - Update id=131548422 is handled. Duration 594 ms by bot id=7880059689
+2025-03-29 16:54:29,847 - INFO - Update id=131548423 is handled. Duration 520 ms by bot id=7880059689
+2025-03-29 16:54:31,903 - INFO - Update id=131548424 is handled. Duration 547 ms by bot id=7880059689
+2025-03-29 16:54:33,173 - INFO - Update id=131548425 is handled. Duration 536 ms by bot id=7880059689
+2025-03-29 16:54:37,898 - INFO - Update id=131548426 is handled. Duration 201 ms by bot id=7880059689
+2025-03-29 16:54:40,063 - INFO - Update id=131548427 is handled. Duration 716 ms by bot id=7880059689
+2025-03-29 16:54:41,892 - INFO - Update id=131548428 is handled. Duration 534 ms by bot id=7880059689
+2025-03-29 16:54:43,342 - INFO - Update id=131548429 is handled. Duration 539 ms by bot id=7880059689
+2025-03-29 16:54:45,471 - INFO - Update id=131548430 is handled. Duration 826 ms by bot id=7880059689
+2025-03-29 16:54:46,911 - INFO - Update id=131548431 is handled. Duration 564 ms by bot id=7880059689
+2025-03-29 16:54:48,315 - INFO - Update id=131548432 is handled. Duration 668 ms by bot id=7880059689
+2025-03-29 16:54:49,404 - INFO - Update id=131548433 is handled. Duration 679 ms by bot id=7880059689
+2025-03-29 16:54:50,496 - INFO - Update id=131548434 is handled. Duration 546 ms by bot id=7880059689
+2025-03-29 16:54:51,991 - INFO - Update id=131548435 is handled. Duration 535 ms by bot id=7880059689
+2025-03-29 16:54:53,180 - INFO - Update id=131548436 is handled. Duration 519 ms by bot id=7880059689
+2025-03-29 16:54:54,351 - INFO - Update id=131548437 is handled. Duration 510 ms by bot id=7880059689
+2025-03-29 16:54:55,530 - INFO - Update id=131548438 is handled. Duration 434 ms by bot id=7880059689
+2025-03-29 16:56:23,327 - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-03-29 16:56:23,484 - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-03-29 16:56:33,339 - ERROR - Тайм-аут при работе с +77711939561.session
+2025-03-29 16:56:33,340 - INFO - Disconnecting from 149.154.167.51:443/TcpFull...
+2025-03-29 16:56:33,340 - INFO - Disconnection from 149.154.167.51:443/TcpFull complete!
+2025-03-29 16:56:34,357 - INFO - Connecting to 91.108.56.130:443/TcpFull...
+2025-03-29 16:56:34,565 - INFO - Connection to 91.108.56.130:443/TcpFull complete!
+2025-03-29 16:56:35,549 - WARNING - Сессия +97517650681.session не авторизована
+2025-03-29 16:56:35,550 - INFO - Disconnecting from 91.108.56.130:443/TcpFull...
+2025-03-29 16:56:35,551 - INFO - Disconnection from 91.108.56.130:443/TcpFull complete!
+2025-03-29 16:56:36,563 - INFO - Connecting to 91.108.56.130:443/TcpFull...
+2025-03-29 16:56:36,773 - INFO - Connection to 91.108.56.130:443/TcpFull complete!
+2025-03-29 16:56:37,278 - ERROR - Ошибка при работе с +97517845878.session на https://t.me/chatik7s/3154729: The authorization key (session file) was used under two different IP addresses simultaneously, and can no longer be used. Use the same session exclusively, or use different sessions (caused by InvokeWithLayerRequest(InitConnectionRequest(GetConfigRequest)))
+2025-03-29 16:56:37,279 - INFO - Disconnecting from 91.108.56.130:443/TcpFull...
+2025-03-29 16:56:37,280 - INFO - Disconnection from 91.108.56.130:443/TcpFull complete!
+2025-03-29 16:56:38,305 - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-03-29 16:56:38,459 - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-03-29 16:56:39,508 - ERROR - Ошибка при работе с 375333587472.session на https://t.me/chatik7s/3154729: ReportRequest.__init__() got an unexpected keyword argument 'option'
+2025-03-29 16:56:39,509 - INFO - Disconnecting from 149.154.167.51:443/TcpFull...
+2025-03-29 16:56:39,509 - INFO - Disconnection from 149.154.167.51:443/TcpFull complete!
+2025-03-29 16:56:40,528 - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-03-29 16:56:40,676 - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-03-29 16:56:41,337 - WARNING - Сессия 38630390013.session не авторизована
+2025-03-29 16:56:41,337 - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-03-29 16:56:41,338 - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
+2025-03-29 16:56:42,346 - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-03-29 16:56:42,501 - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-03-29 16:56:43,330 - ERROR - Ошибка при работе с 38631378560.session на https://t.me/chatik7s/3154729: ReportRequest.__init__() got an unexpected keyword argument 'option'
+2025-03-29 16:56:43,331 - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-03-29 16:56:43,331 - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
+2025-03-29 16:56:44,355 - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-03-29 16:56:44,513 - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-03-29 16:56:45,416 - ERROR - Ошибка при работе с 38640202087.session на https://t.me/chatik7s/3154729: ReportRequest.__init__() got an unexpected keyword argument 'option'
+2025-03-29 16:56:45,417 - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-03-29 16:56:45,417 - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
+2025-03-29 16:56:46,446 - INFO - Connecting to 149.154.167.91:443/TcpFull...
+2025-03-29 16:56:46,600 - INFO - Connection to 149.154.167.91:443/TcpFull complete!
+2025-03-29 16:56:47,656 - ERROR - Ошибка при работе с 38640209677.session на https://t.me/chatik7s/3154729: ReportRequest.__init__() got an unexpected keyword argument 'option'
+2025-03-29 16:56:47,656 - INFO - Disconnecting from 149.154.167.91:443/TcpFull...
+2025-03-29 16:56:47,657 - INFO - Disconnection from 149.154.167.91:443/TcpFull complete!
+2025-03-29 16:56:48,676 - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-03-29 16:56:48,845 - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-03-29 16:56:58,689 - ERROR - Тайм-аут при работе с 77711939561.session
+2025-03-29 16:56:58,689 - INFO - Disconnecting from 149.154.167.51:443/TcpFull...
+2025-03-29 16:56:58,690 - INFO - Disconnection from 149.154.167.51:443/TcpFull complete!
+2025-03-29 16:56:59,712 - INFO - Connecting to 91.108.56.130:443/TcpFull...
+2025-03-29 16:56:59,913 - INFO - Connection to 91.108.56.130:443/TcpFull complete!
+2025-03-29 16:57:00,907 - WARNING - Сессия 97517650681.session не авторизована
+2025-03-29 16:57:00,908 - INFO - Disconnecting from 91.108.56.130:443/TcpFull...
+2025-03-29 16:57:00,908 - INFO - Disconnection from 91.108.56.130:443/TcpFull complete!
+2025-03-29 16:57:01,917 - INFO - Connecting to 91.108.56.130:443/TcpFull...
+2025-03-29 16:57:02,128 - INFO - Connection to 91.108.56.130:443/TcpFull complete!
+2025-03-29 16:57:02,618 - ERROR - Ошибка при работе с 97517845878.session на https://t.me/chatik7s/3154729: The authorization key (session file) was used under two different IP addresses simultaneously, and can no longer be used. Use the same session exclusively, or use different sessions (caused by InvokeWithLayerRequest(InitConnectionRequest(GetConfigRequest)))
+2025-03-29 16:57:02,619 - INFO - Disconnecting from 91.108.56.130:443/TcpFull...
+2025-03-29 16:57:02,619 - INFO - Disconnection from 91.108.56.130:443/TcpFull complete!
+2025-03-29 16:57:03,635 - INFO - Connecting to 149.154.167.51:443/TcpFull...
+2025-03-29 16:57:03,788 - INFO - Connection to 149.154.167.51:443/TcpFull complete!
+2025-03-29 16:57:13,648 - ERROR - Тайм-аут при работе с eng3 (1).session
+2025-03-29 16:57:13,649 - INFO - Disconnecting from 149.154.167.51:443/TcpFull...
+2025-03-29 16:57:13,650 - INFO - Disconnection from 149.154.167.51:443/TcpFull complete!
+2025-03-29 16:57:14,675 - INFO - Отправка жалоб для https://t.me/chatik7s/3154729 завершена: Успешно=0, Неудачно=12
+2025-03-29 16:57:14,918 - INFO - Update id=131548439 is handled. Duration 52232 ms by bot id=7880059689
+2025-03-29 16:57:19,980 - INFO - Update id=131548440 is handled. Duration 519 ms by bot id=7880059689
+2025-03-29 16:57:24,781 - INFO - Update id=131548441 is handled. Duration 533 ms by bot id=7880059689
+2025-03-29 16:57:26,670 - INFO - Update id=131548442 is handled. Duration 532 ms by bot id=7880059689
+2025-03-29 16:57:28,339 - INFO - Update id=131548443 is handled. Duration 511 ms by bot id=7880059689
+2025-03-29 16:57:29,524 - INFO - Update id=131548444 is handled. Duration 341 ms by bot id=7880059689
+2025-03-29 16:58:40,773 - INFO - Update id=131548446 is handled. Duration 514 ms by bot id=7880059689
